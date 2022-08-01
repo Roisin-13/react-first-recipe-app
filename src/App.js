@@ -1,11 +1,14 @@
-import './App.css';
+//import './App.css';
+import React from 'react';
 import { APP_ID , APP_KEY} from './key';
 import Axios from 'axios';
 import { useState } from 'react';
+import { useStyles } from './styles';
 
 function App() {
   const [query, setQuery] = useState("");
   const [recipes, setRecipes] = useState([]);
+  const classes = useStyles();
 
   const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&imageSize=REGULAR`;
 
@@ -17,15 +20,15 @@ function App() {
   const handleClick = (event) => {
     event.preventDefault();
     getRecipe();
-    document.getElementsByClassName("searchIngredient")[0].value="";
+    document.getElementById('si').value="";
   }
 
   return (
-    <div className="App">
+    <div className={classes.App}>
     <h1>Recipe Finder</h1>
-    <form className="searchForm">
-        <input type="text" className="searchIngredient" placeholder="search ingredient" value={query} onChange={(event) => setQuery(event.target.value)}></input>
-        <button type="submit" value="plz click" onClick={handleClick} >find recipes</button>
+    <form className={classes.searchForm}>
+        <input type="text" className={classes.searchIngredient} id="si" placeholder="search ingredient" value={query} onChange={(event) => setQuery(event.target.value)}></input>
+        <button type="submit" className={classes.searchButton} onClick={handleClick} >find recipes</button>
     </form>
     <div>
       {recipes.map(results => {
