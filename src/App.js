@@ -28,17 +28,18 @@ function App() {
     <h1>Recipe Finder</h1>
     <form className={classes.searchForm}>
         <input type="text" className={classes.searchIngredient} id="si" placeholder="search ingredient" value={query} onChange={(event) => setQuery(event.target.value)}></input>
+
         <button type="submit" className={classes.searchButton} onClick={handleClick} >find recipes</button>
     </form>
-    <div>
+    <div className={classes.recipeList}>
       {recipes.map(results => {
         return (
-          <>
+          <div className={classes.recipeBox}>
           <a href={results.recipe.url}>
-          <img src={results.recipe.image}></img>
+              <img src={results.recipe.image} className={classes.recipeImg}></img>
             </a>
           <p>{results.recipe.label}</p>
-          </>
+          </div>
           );
       })}
     </div>
