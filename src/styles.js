@@ -4,6 +4,9 @@ export const useStyles = createUseStyles({
     App : {
         textAlign: 'center', 
     },
+    h1 : {
+        fontFamily: '"Mochiy Pop One", sans- serif',  
+    },
     searchForm : {
         width: '25%',
         margin : {
@@ -36,17 +39,19 @@ export const useStyles = createUseStyles({
           "1fr 1fr 1fr 1fr 1fr"
         `,
         flexWrap: 'wrap',
-        border: '1px solid blue',
+        //border: '1px solid blue',
     },
     recipeBox : {
         width: 150,
-        border: '1px solid pink',
+        //border: '1px solid pink',
     },
     recipeImg : {
         width: 100,
         height: 100,
         objectFit: 'cover',
     },
-    //searchIngredient
+    recipeP: {
+        fontFamily: '"Roboto", sans- serif',
+    },
 
 })

@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className={classes.App}>
-    <h1>Recipe Finder</h1>
+      <h1 className={classes.h1}>Recipe Finder</h1>
     <form className={classes.searchForm}>
         <input type="text" className={classes.searchIngredient} id="si" placeholder="search ingredient" value={query} onChange={(event) => setQuery(event.target.value)}></input>
 
@@ -38,7 +38,7 @@ function App() {
           <a href={results.recipe.url}>
               <img src={results.recipe.image} className={classes.recipeImg}></img>
             </a>
-          <p>{results.recipe.label}</p>
+            <p className={classes.recipeP}>{results.recipe.label}</p>
           </div>
           );
       })}
